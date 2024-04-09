@@ -1,0 +1,16 @@
+COMMON: &common
+  DEBUG: False
+  SQLALCHEMY_TRACK_MODIFICATIONS: False
+
+development:
+  <<: *common
+  DEBUG: True
+  SQLALCHEMY_DATABASE_URI: "mysql://{0}:{1}@localhost/family_budget"
+
+production:
+  <<: *common
+  SQLALCHEMY_DATABASE_URI: "mysql://{0}:{1}@localhost/family_budget"
+
+ADDITIONAL_CONFIG:
+  MYSQL_ROOT_USER: user1
+  MYSQL_ROOT_PASSWORD: Ir-31013107606
